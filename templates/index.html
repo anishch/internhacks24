@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Pane Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="pane languages">
+            <h2>Languages</h2>
+            <ul>
+                <li>English</li>
+                <li>Spanish</li>
+                <li>French</li>
+                <li>German</li>
+                <li>Chinese</li>
+            </ul>
+        </div>
+        <div class="pane document-viewer">
+            <h2>Document Viewer</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="file">
+                <button type="submit">Upload</button>
+            </form>
+            <div id="documentContent">Upload a document to view its content here.</div>
+        </div>
+        <div class="pane chatbot">
+            <h2>Chatbot</h2>
+            <div id="chatbox">
+                <p>Welcome! How can I assist you today?</p>
+            </div>
+            <input type="text" id="userInput" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
