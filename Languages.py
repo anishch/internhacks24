@@ -8,13 +8,9 @@
 # Run: pip install requests uuid
 
 import os, requests, uuid, json
-endpoint = 'ae73c0a952cc41fdab65d86ac21de81a'
-'''
-endpoint_var_name = 'TRANSLATOR_TEXT_ENDPOINT'
-if not endpoint_var_name in os.environ:
-    raise Exception('Please set/export the environment variable: {}'.format(endpoint_var_name))
-endpoint = os.environ[endpoint_var_name]
-'''
+key= "ae73c0a952cc41fdab65d86ac21de81a"
+endpoint = "https://api.cognitive.microsofttranslator.com"
+
 # If you encounter any issues with the base_url or path, make sure
 # that you are using the latest endpoint: https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages
 path = '/languages?api-version=3.0'
