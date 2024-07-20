@@ -36,7 +36,7 @@ def translate_text():
 def detect_language():
     key= "ae73c0a952cc41fdab65d86ac21de81a"
     endpoint = "https://api.cognitive.microsofttranslator.com"
-    path = '/languages?api-version=3.0'
+    path = '/translate'
     constructed_url = endpoint + path
 
     params= {
@@ -45,7 +45,7 @@ def detect_language():
     }
     headers= {
         'Ocp-Apim-Subscription-Key': key,
-        'Ocp-Apim-Subscription-Region': 'westus',
+        'Ocp-Apim-Subscription-Region': 'Westus2',
         'Content-type': 'application/json',
         'X-ClientTraceId': str(uuid.uuid4())
     }
