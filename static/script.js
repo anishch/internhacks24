@@ -14,15 +14,21 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
     document.getElementById('documentContent').innerText = content;
 };
 
-function sendMessage() {
+async function sendMessage() {
     const userInput = document.getElementById('userInput');
     const chatbox = document.getElementById('chatbox');
     const message = userInput.value;
+    const response = await fetch('/respond');
+    const answer = await response.text();
     if (message.trim()) {
         const userMessage = document.createElement('p');
         userMessage.textContent = `You: ${message}`;
         chatbox.appendChild(userMessage);
-        userInput.value = '';
+        const chatMessage = document.createElement('p2');
+        // chatMessage.textContent = `Chat: ${response}`;
+        document.getElementById('p2').innerText = answer;
+        chatbox.appendChild(chatMessage);
         // Add chatbot response logic here
+        userInput.value = ""
     }
 }
