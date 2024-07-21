@@ -10,6 +10,7 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
     });
 
     const content = await response.text();
+    console.log("response received");
     document.getElementById('documentContent').innerText = content;
 };
 
